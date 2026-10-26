@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-Hants">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謝弦豫履歷</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" 
+          integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <header> 
+    <section class="logo">
+        <h1>2026 Fred Hsieh</h1>
+    </section>
+
+    <button
+    class="menu-toggle"
+    type="button"
+    aria-label="開啟選單"
+    aria-expanded="false"
+    aria-controls="header-nav"
+    >
+    <span></span>
+    <span></span>
+    <span></span>
+    </button>
+
+    <nav class="header-nav" id="header-nav">
+    <a href="#portfolio" data-tooltip="作品集">Portfolio</a>
+    <a href="#about" data-tooltip="關於我">About</a>
+    <a href="#skills" data-tooltip="專業技能">Skills</a>
+    <a href="#experience" data-tooltip="工作經歷">Experience</a>
+    <a href="#contact" class="contact-btn" data-tooltip="聯絡我">Contact</a>
+    </nav>
+
+  </header>
+  <main>
+    <section class="banner contact-section" id="contact">
+
+    <div class="banner-container">
+
+        <!-- 左側：文字內容 -->
+        <div class="banner-content">
+
+        <h1>UI/UX & WEB DESIGNER</h1>
+
+        <h2>7+ YEARS OF EXPERIENCE</h2>
+
+        <p class="banner-skills">
+            UI/UX · WEB DESIGN · FRONTEND
+        </p>
+
+        <div class="banner-divider"></div>
+
+        <!-- 個人資訊 -->
+        <div class="banner-info">
+
+            <a href="tel:0970069769" class="info-item">
+                <img src="./images/phone.svg" alt="Phone">
+                <span>0970069769</span>
+            </a>
+
+            <a href="mailto:zxc0916111940@gmail.com" class="info-item">
+                <img src="./images/mail.svg" alt="Email">
+                <span>zxc0916111940@gmail.com</span>
+            </a>
+
+            <div class="info-item">
+                <img src="./images/calendar2.svg" alt="">
+                <span>1995.02.05</span>
+            </div>
+
+            <div class="info-item">
+                <img src="./images/school.svg" alt="">
+                <span>康寧大學 資訊傳播學系</span>
+            </div>
+
+        </div>
+    </div>
+
+        <!-- 右側：照片與姓名 -->
+    <div class="banner-profile">
+
+        <div class="profile-photo">
+            <img src="./images/profile.png" alt="個人照片">
+        </div>
+
+        <div class="profile-name">
+            <h3>HSIEH HSIEN YU</h3>
+            <h4>謝弦豫</h4>
+        </div>
+
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- 作品集 -->
+    <section class="projects" id="portfolio">
+  <div class="projects-container">
+
+    <!-- 標題 -->
+    <div class="projects-header">
+      <div class="projects-heading">
+        <span class="projects-tag">FEATURED PROJECTS</span>
+        <h2>Selected Projects</h2>
+        <p>精選作品</p>
+      </div>
+
+    </div>
+
+    <!-- 作品卡片 -->
+    <div class="projects-grid">
+
+      <!-- 作品 01 -->
+        <a href="#" class="project-card" data-project="gaming">
+            <div class="project-image">
+                <img src="./images/project-1/1-1.png" alt="Gaming Platform 2.0">
+            </div>
+
+            <div class="project-content">
+                <span class="project-category">UI/UX · WEB & APP</span>
+                <h3>Gaming Platform 2.0</h3>
+                <p>UI/UX · 產品規劃 · 互動設計</p>
+            </div>
+        </a>
+
+      <!-- 作品 02 -->
+        <a href="#" class="project-card" data-project="app">
+            <div class="project-image">
+                <img src="./images/project-2/2-1.png" alt="App Interface Design">
+            </div>
+
+            <div class="project-content">
+                <span class="project-category">UI/UX · WEB DESIGN · FRONTEND</span>
+                <h3>App Interface Design</h3>
+                <p>網頁設計 · 產品規劃 · 模組化設計</p>
+            </div>
+        </a>
+        <!-- 作品 03 -->
+            <a href="#" class="project-card" data-project="smartcat">
+                <div class="project-image">
+                    <img src="./images/project-3/3-1.png" alt="App Interface Design">
+                </div>
+
+                <div class="project-content">
+                    <span class="project-category">UI/UX · WEB & APP</span>
+                    <h3>Smartcat</h3>
+                    <p>UI/UX · 產品規劃 · 模組化設計</p>
+                </div>
+            </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     作品彈窗 Modal
+========================= -->
+
+<div
+  class="portfolio-modal"
+  id="portfolioModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="portfolioModalTitle"
+  aria-hidden="true"
+  tabindex="-1"
+>
+  <div class="portfolio-modal-box">
+
+    <!-- 彈窗標題 -->
+    <div class="portfolio-modal-header">
+      <h2 id="portfolioModalTitle"></h2>
+
+      <button
+        type="button"
+        class="portfolio-modal-close"
+        aria-label="關閉作品"
+      >
+        &times;
+      </button>
+    </div>
+
+    <!-- 圖片輪播 -->
+    <div class="portfolio-modal-slider">
+
+      <button
+        type="button"
+        class="portfolio-modal-prev"
+        aria-label="上一張圖片"
+      >
+        &#10094;
+      </button>
+
+      <div class="portfolio-modal-image">
+        <img id="portfolioModalImage" alt="作品展示圖片" decoding="async" draggable="false">
+      </div>
+
+      <button
+        type="button"
+        class="portfolio-modal-next"
+        aria-label="下一張圖片"
+      >
+        &#10095;
+      </button>
+
+    </div>
+
+    <!-- 圖片數量 -->
+    <div class="portfolio-modal-footer">
+      <span id="portfolioModalCounter">1 / 1</span>
+    </div>
+
+  </div>
+</div>
+
+    <!-- 關於我 -->
+    
+    <section class="about-section" class="about-section" id="about">
+    <div class="about-container">
+
+        <!-- 左側：個人介紹 -->
+        <div class="about-content">
+        <div class="about-heading">
+            <span class="about-tag">ABOUT ME</span>
+            <h2>Designing Digital Experiences<br>
+                with UI/UX & Frontend</h2>
+            <p class="about-subtitle">關於我</p>
+        </div>
+
+        <p class="about-description">
+            具備 7 年以上網頁設計與前端開發經驗，
+            涵蓋 UI/UX 介面設計、跨品牌視覺規劃與樣式架構管理。
+            擅長整合使用者體驗與前端開發思維，
+            打造兼具易用性與視覺一致性的數位產品。
+        </p>
+        </div>
+
+        <!-- 右側：數據統計 -->
+        <div class="about-stats">
+
+        <div class="stat-item">
+            <div class="stat-icon">
+            <img class="icon-size"
+                src="./images/calendar.svg" alt="">
+            </div>
+            <div class="stat-info">
+            <h3>7+</h3>
+            <h4>Years of Experience</h4>
+            <p>設計與前端開發經驗</p>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">
+            <img class="icon-size"
+                src="./images/template.svg" alt="">
+            </div>
+            <div class="stat-info">
+            <h3>10+</h3>
+            <h4>Templates Designed</h4>
+            <p>網站模板設計</p>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">
+            <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div class="stat-info">
+            <h3>25+</h3>
+            <h4>Templates Optimized</h4>
+            <p>網站模板優化與維護</p>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <div class="stat-info">
+            <h3>Web & App</h3>
+            <h4>Cross-Platform Design</h4>
+            <p>跨平台介面設計</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- 技能 -->
+    <section class="skills-section" id="skills">
+        <div class="skills-container">
+        <div class="skills-heading">
+            <span class="skills-tag">MY SKILLS</span>
+            <h2>Skills & Expertise</h2>
+            <p>專業技能</p>
+        </div>
+        <div class="skills-grid">
+        <article class="skills-card"><h3><span class="skills-card-icon"><img src="./images/icons/uiux.svg" alt=""></span>UI/UX Design</h3>
+            <div class="skills-item" data-level="90"><img class="skills-logo" src="./images/icons/figma.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Figma</span><span>90%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="80"><img class="skills-logo" src="./images/icons/wireframe.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Wireframe</span><span>80%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="85"><img class="skills-logo" src="./images/icons/prototype.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Prototype</span><span>85%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+        </article>
+        <article class="skills-card"><h3><span class="skills-card-icon"><img src="./images/icons/frontend.svg" alt=""></span>Frontend</h3>
+            <div class="skills-item" data-level="90"><img class="skills-logo" src="./images/icons/html.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>HTML / SCSS</span><span>90%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="75"><img class="skills-logo" src="./images/icons/javascript.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>JavaScript</span><span>75%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="60"><img class="skills-logo" src="./images/icons/vue.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Vue.js</span><span>60%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+        </article>
+        <article class="skills-card"><h3><span class="skills-card-icon"><img src="./images/icons/visual.svg" alt=""></span>Visual Design</h3>
+            <div class="skills-item" data-level="95"><img class="skills-logo" src="./images/icons/photoshop.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Photoshop</span><span>95%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="90"><img class="skills-logo" src="./images/icons/illustrator.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Illustrator</span><span>90%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="80"><img class="skills-logo" src="./images/icons/aftereffects.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>After Effects</span><span>80%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+        </article>
+        <article class="skills-card"><h3><span class="skills-card-icon"><img src="./images/icons/collaboration.svg" alt=""></span>Collaboration</h3>
+            <div class="skills-item" data-level="85"><img class="skills-logo" src="./images/icons/design-system.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Design System</span><span>85%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="90"><img class="skills-logo" src="./images/icons/rwd.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>RWD</span><span>90%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+            <div class="skills-item" data-level="85"><img class="skills-logo" src="./images/icons/handoff.svg" alt=""><div class="skills-detail"><div class="skills-meta"><span>Developer Handoff</span><span>85%</span></div><div class="skills-track"><div class="skills-fill"></div></div></div></div>
+        </article>
+        </div>
+    </div>
+  </section>
+    
+    <!-- 經歷 -->
+    <section class="experience-section" id="experience">
+    <!-- 右下角背景裝飾 -->
+    <div class="experience-decoration" aria-hidden="true">
+        <span class="exp-circle exp-circle-1"></span>
+        <span class="exp-circle exp-circle-2"></span>
+        <span class="exp-circle exp-circle-3"></span>
+    </div>
+
+    <div class="experience-container">
+
+        <!-- 標題 -->
+        <div class="experience-heading">
+        <span class="experience-tag">PROFESSIONAL EXPERIENCE</span>
+        <h2>Work Experience</h2>
+        <p>工作經歷</p>
+        </div>
+
+        <!-- 左右雙欄 -->
+        <div class="experience-grid">
+
+        <!-- 左側：鑫鼎鑽 -->
+        <article class="experience-company experience-company-main">
+
+            <div class="experience-company-header">
+            <div>
+                <h3>鑫鼎鑽科技</h3>
+            </div>
+            <time>2019/12 – 2026/07</time>
+            </div>
+
+            <!-- 包網平台 -->
+            <div class="experience-role">
+            <h4>包網平台｜模板管理與前端開發</h4>
+            <p class="experience-role-subtitle">
+                Web Design · UI/UX · Frontend Development
+            </p>
+
+            <ul>
+                <li>
+                運用 Ruby on Rails、jQuery、SCSS 進行模組化樣式管理，
+                完成 10+ 組前台模板設計與開發，
+                並參與 Git Flow 協作及 API 串接。
+                </li>
+                <li>
+                負責紅包簽到、週簽到、救援金及任務活動，
+                涵蓋 UI/UX 設計、操作流程規劃與前端實作。
+                </li>
+                <li>
+                參與前後端分離專案，運用 Figma 建立設計系統，
+                協助 2.0 版本介面優化與模組化整合。
+                </li>
+            </ul>
+            </div>
+
+            <!-- 微服務專案 -->
+            <div class="experience-role">
+            <h4>微服務專案｜產品規劃與 UI/UX 設計</h4>
+            <p class="experience-role-subtitle">
+                Product Design · UI/UX 
+            </p>
+
+            <ul>
+                <li>
+                執行產品調研與功能規劃，
+                撰寫功能規格文件、使用者流程圖及介面規劃文件。
+                </li>
+                <li>
+                與前後端工程師協作，
+                進行需求溝通、技術可行性評估與功能實作協調。
+                </li>
+                <li>
+                制定視覺規範與 UI 元件，
+                負責輪盤、砸金蛋等活動的互動設計與體驗優化。
+                </li>
+            </ul>
+            </div>
+
+        </article>
+
+        <!-- 右側：哈博汽車 -->
+        <article class="experience-company experience-company-secondary">
+
+            <div class="experience-company-header">
+            <div>
+                <h3>哈博汽車有限公司</h3>
+            </div>
+            <time>2017/06 – 2019/10</time>
+            </div>
+
+            <div class="experience-role">
+            <h4>Graphic Designer</h4>
+            <p class="experience-role-subtitle">
+                Brand Design · Graphic Design · Visual Design
+            </p>
+
+            <ul>
+                <li>執行品牌視覺、行銷活動及賽事宣傳設計，製作社群與平面素材。</li>
+                <li>參與網站視覺設計與網頁內容製作，維持品牌形象一致性。</li>
+                <li>負責汽車雜誌及平面刊物排版，整合圖文與版面設計。</li>
+                <li>執行汽車與賽車活動攝影，包含影像修圖及後製處理。</li>
+            </ul>
+            </div>
+
+        </article>
+
+        </div>
+    </div>
+    </section>
+
+
+
+  </main>
+
+    <!-- Footer -->
+
+    <footer class="site-footer" id="contact">
+
+    <div class="footer-container">
+
+        <!-- 上方主要內容 -->
+        <div class="footer-main">
+
+        <!-- 左側 -->
+        <div class="footer-left">
+
+            <span class="footer-tag">LET'S CONNECT</span>
+
+            <h2>Let's Work Together.</h2>
+
+            <p class="footer-description">
+            Open to UI/UX Design, Web Design &amp;
+            Frontend opportunities.
+            </p>
+
+            <div class="footer-actions">
+
+            <a
+                href="mailto:zxc0916111940@gmail.com"
+                class="footer-contact-btn"
+            >
+                <i class="fa-regular fa-envelope"></i>
+                <span>Contact Me</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+            <div class="footer-availability">
+                <span class="status-dot"></span>
+                <span>Available for opportunities</span>
+            </div>
+
+            </div>
+        </div>
+
+        <!-- 右側 -->
+        <div class="footer-right">
+
+            <!-- 背景裝飾 -->
+            <div class="footer-orb orb-large"></div>
+            <div class="footer-orb orb-small"></div>
+            <div class="footer-dots"></div>
+
+            <div class="footer-info-card footer-career">
+            <div class="footer-info-icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div class="footer-info-text">
+                <span>CAREER STATUS</span>
+                <strong>
+                Open to UI/UX & Frontend Roles
+                <i class="fa-solid fa-circle-check career-check"></i>
+                </strong>
+            </div>
+            </div>
+
+            <!-- Portfolio -->
+            <a
+            href="#portfolio"
+            class="footer-info-card footer-portfolio"
+            >
+            <div class="footer-info-icon">
+                <i class="fa-solid fa-link"></i>
+            </div>
+
+            <div class="footer-info-text">
+                <span>PORTFOLIO</span>
+                <strong>
+                View My Projects
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </strong>
+            </div>
+            </a>
+
+            <!-- Location -->
+            <div class="footer-info-card footer-location">
+
+            <div class="footer-info-icon">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div class="footer-info-text">
+                <span>LOCATION</span>
+                <strong>Taiwan, Taipei</strong>
+            </div>
+
+            </div>
+        </div>
+
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer-bottom">
+
+        <p class="footer-copyright">
+            © 2026 Fred Hsieh. All rights reserved.
+        </p>
+
+        <button
+            type="button"
+            class="footer-back-top"
+            id="backToTop"
+        >
+            Back to Top
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        </div>
+
+    </div>
+
+    </footer>
+
+
+  <script src="./styles/portfolio.js" defer></script>
+  <script src="./styles/skills.js" defer></script>
+</body>
+</html>
